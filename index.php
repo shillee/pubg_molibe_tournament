@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -27,7 +29,9 @@
                     </div>
                     <div class="form-group">
                             <label for="">Телефона</label>
-                            <input type="text" name="number" id="number" class="form-control" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" placeholder="Ваш номер телефона (888 888 8888)" aria-describedby="helpId">
+                            <div class="user_phone">
+                            <input type="text" name="number" id="number" class="form-control" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" placeholder="(___) ___ __ __" aria-describedby="helpId">
+                            </
                         </div>
                     <div class="form-group">
                         <input class="btn btn-primary" name="submit" type="submit" value="Отправить"><br>
@@ -44,7 +48,7 @@
                             if ( mail($to_email, $subject, $messeng, $headers)) {
                                 echo("Спасибо за регистрацию, мы скоро с вами свяжемся.");
                             } else {
-                                echo("Ошибка при отправке. Попробуйте еще раз");
+                                echo("Ошибка при отправке. Попробуйте еще раз.");
                             }
                         }
                         ?>
@@ -52,6 +56,18 @@
                     </div>
                 </form>
             </div>
+
+                    <ul class="menu bottomRight">
+        <li class="share top">
+            <i class="fa fa-share-alt"></i>
+            <ul class="submenu">
+            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+        </li>
+        </ul>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
