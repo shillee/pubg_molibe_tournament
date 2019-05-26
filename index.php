@@ -1,3 +1,28 @@
+<?php
+define('SITE_KEY', '6LcRkaUUAAAAAKE_FSU_YsRak9bE76PoabuPSmQZ');
+define('SITE_KEY', '6LcRkaUUAAAAAPywwJxHN3VGm95NzDcDdx0WqK3L');
+if($_POST){
+    /*СОЗДАЕМ ФУНКЦИЮ КОТОРАЯ ДЕЛАЕТ ЗАПРОС НА GOOGLE СЕРВИС*/
+    function getCaptcha($SecretKey) {
+        $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRET_KEY."&response={$SecretKey}");
+        $Return = json_decode($Response);
+        return $Return;
+    }
+
+    /*ПРОИЗВОДИМ ЗАПРОС НА GOOGLE СЕРВИС И ЗАПИСЫВАЕМ ОТВЕТ*/
+    $Return = getCaptcha($_POST['g-recaptcha-response']);
+    /*ВЫВОДИМ НА ЭКРАН ПОЛУЧЕННЫЙ ОТВЕТ*/
+    var_dump($Return);
+
+    /*ЕСЛИ ЗАПРОС УДАЧНО ОТПРАВЛЕН И ЗНАЧЕНИЕ score БОЛЬШЕ 0,5 ВЫПОЛНЯЕМ КОД*/
+    if($Return->success == true && $Return->score > 0.5){
+        echo "Succes!";
+    }
+    else {
+        echo "You are Robot";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="ru-RU">
 
@@ -36,7 +61,10 @@
                         <label for="">Телефона</label>
                         <div class="user_phone">
   		                <input type="tel" required placeholder="+38 (___) ___-__-__" id="user_phone" class="user-phone" title="Формат: +38 (096) 999 99 99"/>
-	                </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="g-recaptcha-response" id="g-recaptcha-response">
+                    </div>
                     <div class="form-group">
                         <input class="btn btn-primary btn_submit" name="submit" type="submit" value="Отправить" disabled><br>
 
@@ -79,6 +107,16 @@
             </div>
         </div>
     </div>
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY ?>"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=reCAPTCHA_site_key"></script>
+  <script>
+  grecaptcha.ready(function() {
+      grecaptcha.execute('<?php echo SITE_KEY ?>', {action: 'homepage'}).then(function(token) {
+        console.log(token);
+        document.GetElementById('g-recaptcha-response').value = token
+      });
+  });
+  </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
