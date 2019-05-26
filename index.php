@@ -42,9 +42,9 @@
                             $messeng = "Имя: " . $name . "\n" . "Телефон: " . $number . "\n" . "Email: " . $email;
                             $headers = "From: info@pubg-tour.zzz.com.ua";
                             if ( mail($to_email, $subject, $messeng, $headers)) {
-                                echo("thank you for registration, we will contact you.");
+                                echo("Спасибо за регистрацию, мы скоро с вами свяжемся.");
                             } else {
-                                echo("Email sending failed...");
+                                echo("Ошибка при отправке. Попробуйте еще раз");
                             }
                         }
                         ?>
