@@ -28,13 +28,12 @@
                         <input type="email" name="email" id="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Ваша электронная почта" aria-describedby="helpId">
                     </div>
                     <div class="form-group">
-                            <label for="">Телефона</label>
-                            <div class="user_phone">
-                            <input type="text" name="number" id="number" class="form-control" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" placeholder="+38 (___) ___-__-__" title="Формат: +38 (096) 999 99 99" aria-describedby="helpId">
-                            </
-                        </div>
+                        <label for="">Телефона</label>
+                        <div class="user_phone">
+  		                <input type="tel" required placeholder="+38 (___) ___-__-__" id="user_phone" class="user-phone" title="Формат: +38 (096) 999 99 99"/>
+	                </div>
                     <div class="form-group">
-                        <input class="btn btn-primary" name="submit" type="submit" value="Отправить" disabled><br>
+                        <input class="btn btn-primary btn_submit" name="submit" type="submit" value="Отправить" disabled><br>
 
                         <?php
                         if(isset($_POST['submit'])){
@@ -75,6 +74,34 @@
             </div>
         </div>
     </div>
+    <script>
+    (function( $ ){
+
+    var $body;
+
+    $(document).ready(function(){
+      $body = $('body');
+
+      $body
+        .find('.user-phone').each(function(){
+            $(this).mask("+38 (999) 999-99-99", {autoсlear: false});
+        });
+
+      $body.on('keyup','.user-phone',function(){
+        var phone = $(this),
+            phoneVal = phone.val(),
+            form = $(this).parents('form');
+
+        if ( (phoneVal.indexOf("_") != -1) || phoneVal == '' ) {
+          form.find('.btn_submit').attr('disabled',true);
+        } else {
+          form.find('.btn_submit').removeAttr('disabled');
+        }
+      });
+
+    });
+
+  })( jQuery );</script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="jquery.maskedinput.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
