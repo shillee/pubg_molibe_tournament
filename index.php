@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru-RU">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <title>PUBG TOUR - зарегестриваться</title>
 
     <meta name="description" content="Круто играешь в Pubg Mobile? Если это так, то скорее зарегестрируйся. Сдесь будут проходить жесточайшие турниры со ставками. И лишь самый сильный сможет победить." />
-    <meta name="keywords" content=" ,Сквады ,Игра пабг, Турнир, Pubg Tour, pubg, пабг, PlayerUnknown’s Battlegrounds, игровые ставки, соревнования, денежные ставки, пабг регистрация, плэйер анкнаунс баттле граунд">
+    <meta name="keywords" content="Сквады ,Игра пабг, Турнир, Pubg Tour, pubg, пабг, PlayerUnknown’s Battlegrounds, игровые ставки, соревнования, денежные ставки, пабг регистрация, плэйер анкнаунс баттле граунд">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
