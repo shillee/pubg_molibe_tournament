@@ -63,10 +63,10 @@ if($_POST){
   		                <input type="tel" required placeholder="+38 (___) ___-__-__" id="user_phone" class="user-phone" title="Формат: +38 (096) 999 99 99"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="g-recaptcha-response" id="g-recaptcha-response">
+                        <input type="text" name="g-recaptcha-response" id="g-recaptcha-response" hidden>
                     </div>
                     <div class="form-group">
-                        <input class="btn btn-primary btn_submit" name="submit" type="submit" value="Отправить" disabled><br>
+                        <input class="btn btn-primary btn_submit" name="submit" type="submit" value="Отправить"><br>
 
                         <?php
                         if(isset($_POST['submit'])){
