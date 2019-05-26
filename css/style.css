@@ -1,0 +1,27 @@
+*{
+    overflow: hidden;
+}
+.bg-container{
+    background-color: #213986;
+    color: #f4f4f4;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 400px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.content-form{
+    width: 400px;
+    background-color: rgba(58, 58, 58, 0.644);
+    border-radius: 5px;
+    padding: 30px;
+}
