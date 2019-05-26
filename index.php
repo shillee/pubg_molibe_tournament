@@ -30,11 +30,11 @@
                     <div class="form-group">
                             <label for="">Телефона</label>
                             <div class="user_phone">
-                            <input type="text" name="number" id="number" class="form-control" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" placeholder="(___) ___ __ __" aria-describedby="helpId">
+                            <input type="text" name="number" id="number" class="form-control" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" placeholder="+38 (___) ___-__-__" title="Формат: +38 (096) 999 99 99" aria-describedby="helpId">
                             </
                         </div>
                     <div class="form-group">
-                        <input class="btn btn-primary" name="submit" type="submit" value="Отправить"><br>
+                        <input class="btn btn-primary" name="submit" type="submit" value="Отправить" disabled><br>
 
                         <?php
                         if(isset($_POST['submit'])){
@@ -57,19 +57,26 @@
                 </form>
             </div>
 
-                    <ul class="menu bottomRight">
-        <li class="share top">
-            <i class="fa fa-share-alt"></i>
-            <ul class="submenu">
-            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
-            </ul>
-        </li>
-        </ul>
+            <div class="container-social pt-5">
+                <div class="row">
+                    <div class="col">
+                        <a class="asocial facebook" href="#"><i class="link-social fab fa-facebook-square"></i></a>
+                    </div>
+                    <div class="col">
+                        <a class="asocial instagram" href="https://www.instagram.com/pubg_mobile_tournament_ukraine/"><i class="link-social fab fa-instagram"></i></a>
+                    </div>
+                    <div class="col">
+                        <a class="asocial twitter" href="#"><i class="link-social fab fa-twitter-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copy text-center pt-3">
+                <p>Copyright © tour-pubg 2019 Все права защищены</p>
+            </div>
         </div>
     </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="jquery.maskedinput.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
